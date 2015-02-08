@@ -14,3 +14,20 @@ h3 {
    font-weight: normal;
    font-style: italic;
 }
+
+.oculto {
+    display: none;
+}
+
+.contenedor_web {
+   width: 99,9%;
+   height: 100px;
+   border-style: solid;
+   border-width: 2px;
+}
+
+div > object {
+   
+   width: 100%;
+   height:inherit;
+}
