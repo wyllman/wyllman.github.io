@@ -22,8 +22,13 @@ label {
    display: block;
 }
 
-header {
+#cabecera {
    position:fixed;
+   width: 99%;
+   width:-webkit-calc(100% - 6px);
+   width:-moz-calc(100% - 6px);
+   width:-o-calc(100% - 6px);
+   width:-ms-calc(100% - 6px);
    width: calc(100% - 6px);
    height:auto;
    top: 0px;
@@ -33,6 +38,59 @@ header {
    border-bottom-left-radius: 15px;
    border-style: solid;
    border-width: 3px;
+   
+   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+#cabecera:hover {
+   /*box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.10);*/
+   
+   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.50);
+   border-color: rgba(0,0,200,1);
+}
+
+#cabeceraMini {
+   position:fixed;
+   right: 0%;
+   width: 100px;
+   height: 100px;
+   top: 0px;
+   z-index: 200;
+   background-color: #FFF;
+   border-top-right-radius: 50px;
+   border-top-left-radius: 50px;
+   border-bottom-right-radius: 50px;
+   border-bottom-left-radius: 50px;
+   border-style: solid;
+   border-width: 3px;
+   
+   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+   
+   overflow:hidden;
+}
+
+#cabeceraMini > h1{
+   line-height:100px;
+   vertical-align:middle;
+   text-align: center;
+}
+
+#cabeceraMini.cmtrans {
+   -webkit-transition: top 2s;
+   transition: top 2s;
+   top: -120px;
+}
+
+#cabeceraMini.cmtransR {
+   -webkit-transition: top 2s;
+   transition: top 2s;
+   top: 0px;
+}
+
+.htransR {
+   -webkit-transition: top 2s;
+   transition: top 2s;
+   top: 0px;
 }
 
 div > object {
@@ -44,7 +102,7 @@ div > object {
     display: none;
 }
 
-.resaltado {
+label:hover {
    color: blue;
 }
 
@@ -60,6 +118,9 @@ div > object {
 }
 
 #cuerpo {
+   width: 95%;
+   width:-webkit-calc(100% - 30px);
+   width:-moz-calc(100% - 30px);
    width: calc(100% - 30px);
    height: 100%;
    
@@ -72,6 +133,9 @@ div > object {
    position:absolute;
    
    width: 15%;
+   height: 97.5%;
+   height:-webkit-calc(100% - 20px);
+   height:-moz-calc(100% - 20px);
    height: calc(100% - 20px);
 
    border-style: solid;
@@ -82,7 +146,13 @@ div > object {
    float:right;
    position:relative;
    
+   width: 80%;
+   width:-webkit-calc(85% - 30px);
+   width:-moz-calc(85% - 30px);
    width: calc(85% - 30px);
+   height: 98%;
+   height:-webkit-calc(100% - 10px);
+   height:-moz-calc(100% - 10px);
    height: calc(100% - 10px);
    
    overflow:auto;
