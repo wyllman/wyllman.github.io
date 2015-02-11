@@ -20,7 +20,7 @@ window.onload = function () {
    if (transitionEvent) {
 
       cabecera.addEventListener(transitionEvent, function() {
-          recolocarCuerpo ();
+          //recolocarCuerpo ();
       });
    }
    /*crear una hoja de estilo propia -----
@@ -44,12 +44,16 @@ function recolocarCuerpo () {
    var cabecera = document.getElementById("cabecera");
    var cuerpo = document.getElementById("cuerpo");
    
-   var valor = cabecera.offsetHeight + cabecera.offsetTop + 5;
+   var valor = cabecera.offsetHeight + 5;
    
+   if (cabecera.className.match(/htrans/) && !cabecera.className.match(/htransR/)){
+   
+      valor = 25;
+   }
    
    	var elemento = document.getElementById("estiloCuerpo");
     if (!elemento){
-       console.log("El elemento selecionado no existe");
+       //console.log("El elemento selecionado no existe");
     } else {
        padre = elemento.parentNode;
        padre.removeChild(elemento);
@@ -58,17 +62,15 @@ function recolocarCuerpo () {
    var style = document.createElement('style');
    style.id = "estiloCuerpo";
    style.type = 'text/css';
-   style.innerHTML = ".ctrans { transition: margin-top 1s;"
-                            + "-webkit-transition: margin-top 1s;"
+   style.innerHTML = ".ctrans { transition: margin-top 2s;"
+                            + "-webkit-transition: margin-top 2s;"
                             + " margin-top: " +  valor + "px }";
                             
    cuerpo.appendChild(style);
    
    var texto = cuerpo.className;
    
-   if (texto.match(/ctrans/)){
-      //texto = texto.replace(/(\,\s)?ctrans/, " ");
-   } else {
+   if (!texto.match(/ctrans/)){
       texto += " ctrans";
    }
    
@@ -100,7 +102,7 @@ function subirCabecera () {
   
    	var elemento = document.getElementById("estiloCabecera");
     if (!elemento){
-       console.log("El elemento selecionado no existe");
+       //console.log("El elemento selecionado no existe");
     } else {
        padre = elemento.parentNode;
        padre.removeChild(elemento);
@@ -109,8 +111,8 @@ function subirCabecera () {
    var style = document.createElement('style');
    style.id = "estiloCabecera";
    style.type = 'text/css';
-   style.innerHTML = "#cabecera.htrans { transition: top 2s;"
-                            + "-webkit-transition: top 2s;"
+   style.innerHTML = "#cabecera.htrans { transition: top 1.5s;"
+                            + "-webkit-transition: top 1.5s;"
                             + " top: " +  valor + "px }";
    cabecera.appendChild(style);
    
@@ -141,6 +143,8 @@ function subirCabecera () {
    
    cabecera.className = texto;
    cabeceraMini.className = texto2;
+   
+   recolocarCuerpo ();
 }
 
 

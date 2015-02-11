@@ -76,20 +76,20 @@ label {
 }
 
 #cabeceraMini.cmtrans {
-   -webkit-transition: top 2s;
-   transition: top 2s;
+   -webkit-transition: top 1.5s;
+   transition: top 1.5s;
    top: -120px;
 }
 
 #cabeceraMini.cmtransR {
-   -webkit-transition: top 2s;
-   transition: top 2s;
+   -webkit-transition: top 1.5s;
+   transition: top 1.5s;
    top: 0px;
 }
 
 .htransR {
-   -webkit-transition: top 2s;
-   transition: top 2s;
+   -webkit-transition: top 1.5s;
+   transition: top 1.5s;
    top: 0px;
 }
 
