@@ -20,6 +20,14 @@ window.onload = function () {
    if (transitionEvent) {
 
       cabecera.addEventListener(transitionEvent, function() {
+          
+         /* if (cabecera.className.match(/htransR/)){
+             cabecera.className = cabecera.className.replace(/(\,\s)?htransR/, "");
+          } else if (cabecera.className.match(/htrans/)){
+             cabecera.className = cabecera.className.replace(/(\,\s)?htrans/, "");
+          }*/
+          
+          
           //recolocarCuerpo ();
       });
    }
@@ -38,6 +46,33 @@ window.onload = function () {
 
 window.onresize = function () {
    recolocarCuerpo ();
+   var cabecera = document.getElementById("cabecera");
+   if (cabecera.className.match(/htransR/)){
+      //cabecera.className = cabecera.className.replace(/(\,\s)?htransR/, "");
+   } else if (cabecera.className.match(/htrans/)) {
+      //cabecera.className = cabecera.className.replace(/(\,\s)?htrans/, "");
+      var valor = (cabecera.offsetHeight - 20) + cabecera.offsetTop;
+      if (valor < 0 || valor > 26 ) {
+       valor = - (cabecera.offsetHeight - 20);
+       //cabecera.style.top = valor + "px";
+       
+       
+       var elemento = document.getElementById("estiloCabecera");
+       if (!elemento){
+          //console.log("El elemento selecionado no existe");
+       } else {
+          padre = elemento.parentNode;
+          padre.removeChild(elemento);
+       }
+   
+      var style = document.createElement('style');
+      style.id = "estiloCabecera";
+      style.type = 'text/css';
+      style.innerHTML = "#cabecera.htrans { top: " +  valor + "px }";
+      cabecera.appendChild(style);
+    }
+      
+   }
 }
 
 function recolocarCuerpo () {

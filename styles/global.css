@@ -87,7 +87,7 @@ label {
    top: 0px;
 }
 
-.htransR {
+#cabecera.htransR {
    -webkit-transition: top 1.5s;
    transition: top 1.5s;
    top: 0px;
