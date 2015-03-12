@@ -20,27 +20,9 @@ window.onload = function () {
    if (transitionEvent) {
 
       cabecera.addEventListener(transitionEvent, function() {
-          
-         /* if (cabecera.className.match(/htransR/)){
-             cabecera.className = cabecera.className.replace(/(\,\s)?htransR/, "");
-          } else if (cabecera.className.match(/htrans/)){
-             cabecera.className = cabecera.className.replace(/(\,\s)?htrans/, "");
-          }*/
-          
-          
-          //recolocarCuerpo ();
+
       });
    }
-   /*crear una hoja de estilo propia -----
-   
-   var style = document.createElement('style');
-   style.type = 'text/css';
-   style.innerHTML = '.cssClass { color: #F00; }';
-   document.getElementsByTagName('head')[0].appendChild(style);
-
-   document.getElementById('someElementId').className = 'cssClass';
-   
-   */
 
 }
 
