@@ -35,27 +35,27 @@ CuerpoW.prototype.crearCTrans = function (conTran) {
    
    //console.log(this.cuerpo.offsetTop);
    
-   elemento = document.getElementById("estiloCuerpo");
-   if (elemento) {
-      padre = elemento.parentNode;
-      padre.removeChild(elemento);
-   }
+      elemento = document.getElementById("estiloCuerpo");
+      if (elemento) {
+         padre = elemento.parentNode;
+         padre.removeChild(elemento);
+      }
       
-   estilo = document.createElement('style');
-   estilo.id = "estiloCuerpo";
-   estilo.type = 'text/css';
+      estilo = document.createElement('style');
+      estilo.id = "estiloCuerpo";
+      estilo.type = 'text/css';
       
-   if (conTran) {
-      estilo.innerHTML = "#cuerpo.ctrans { transition: margin-top 2s;"
-                        + "-webkit-transition: margin-top 2s;"
-                        + " margin-top: " +  valor + "px; " 
-                        + " border-style: solid; border-width: 2px; }";
+      if (conTran) {
+         estilo.innerHTML = "#cuerpo.ctrans { transition: margin-top 2s;"
+                           + "-webkit-transition: margin-top 2s;"
+                           + " margin-top: " +  valor + "px; " 
+                           + " border-style: solid; border-width: 2px; }";
       
-   } else {
-      estilo.innerHTML = "#cuerpo.ctrans { margin-top: " +  valor + "px; " 
-                        + " border-style: solid; border-width: 2px; }";
-   }
-   this.cuerpo.appendChild(estilo);
+      } else {
+         estilo.innerHTML = "#cuerpo.ctrans { margin-top: " +  valor + "px; " 
+                           + " border-style: solid; border-width: 2px; }";
+      }
+      this.cuerpo.appendChild(estilo);
    
    }
 }
@@ -71,4 +71,10 @@ CuerpoW.prototype.recolocarCuerpo = function () {
    }
    
    cuerpo.className = texto;
+}
+
+var cuerpoF;
+
+function crearCuerpoW () {
+   cuerpoF = new CuerpoW();
 }

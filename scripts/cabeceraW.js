@@ -139,11 +139,10 @@ CabeceraW.prototype.transicion = function() {
 }
 
 var cabeceraF;
-var cuerpoF;
 
 function crearCabeceraW () {
    cabeceraF = new CabeceraW();
-   cuerpoF = new CuerpoW();
+   //cuerpoF = new CuerpoW();
    
    cabeceraF.cabecera.addEventListener("click", function() {
       cabeceraF.transicion();
@@ -154,6 +153,7 @@ function crearCabeceraW () {
 
 window.onload = function () {
    crearCabeceraW ();
+   crearCuerpoW ();
    cuerpoF.recolocarCuerpo ();
 }
 
