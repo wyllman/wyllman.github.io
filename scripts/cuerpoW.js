@@ -5,8 +5,7 @@ function CuerpoW(conCab) {
    this.cuerpo = document.getElementById("cuerpo");
    
    // Controladores de estado
-   this.conCab = conCabI; // FIXME:Cambio por compatibilidad safari
-
+   this.conCab = conCabI;
 }
 
 // Funcion para crear una clase css dinamica que 
