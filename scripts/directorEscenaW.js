@@ -15,8 +15,8 @@ function crearEscena () {
    cabeceraF = new CabeceraW();
    cuerpoF = new CuerpoW();
    seccionCF1 = new SeccionCentralW (1, "Asignaturas", "./html/asignaturas.html");
-   seccionCF2 = new SeccionCentralW (2, "Personales");
-   seccionCF3 = new SeccionCentralW (3, "Tutoriales");
+   seccionCF2 = new SeccionCentralW (2, "Personales", "./html/personales.html");
+   seccionCF3 = new SeccionCentralW (3, "Tutoriales", "./html/tutoriales.html");
       
    cabeceraF.cabecera.addEventListener("click", function() {
       cabeceraF.transicion();
