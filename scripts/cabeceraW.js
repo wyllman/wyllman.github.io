@@ -1,5 +1,3 @@
-//var axxx = require ('cuerpoW');
-
 // Definición de la clase CabeceraW
 function CabeceraW() {
    // Objetos html
@@ -136,30 +134,6 @@ CabeceraW.prototype.transicion = function() {
    } else {
       this.mostrarMini();
    }
-}
-
-var cabeceraF;
-
-function crearCabeceraW () {
-   cabeceraF = new CabeceraW();
-   //cuerpoF = new CuerpoW();
-   
-   cabeceraF.cabecera.addEventListener("click", function() {
-      cabeceraF.transicion();
-      cuerpoF.recolocarCuerpo ();
-   });
-}
-
-
-window.onload = function () {
-   crearCabeceraW ();
-   crearCuerpoW ();
-   cuerpoF.recolocarCuerpo ();
-}
-
-window.onresize = function () {
-   cabeceraF.redimensionar ();
-   cuerpoF.crearCTrans (false);
 }
 
 

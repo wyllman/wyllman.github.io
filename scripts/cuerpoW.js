@@ -23,9 +23,9 @@ CuerpoW.prototype.crearCTrans = function (conTran) {
    if (this.conCab) {
       
       if (cabeceraF.cabExtMostrada) {
-         valor = cabeceraF.cabecera.offsetHeight + 5;
+         valor = cabeceraF.cabecera.offsetHeight + 10;
       } else {
-         valor = 25;
+         valor = 30;
       }
    } else {
       valor = 0;
@@ -71,10 +71,4 @@ CuerpoW.prototype.recolocarCuerpo = function () {
    }
    
    cuerpo.className = texto;
-}
-
-var cuerpoF;
-
-function crearCuerpoW () {
-   cuerpoF = new CuerpoW();
 }
