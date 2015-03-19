@@ -39,11 +39,21 @@ function crearEscena () {
       seccionCF[0].transicion ();
    });
    
+   seccionCF[0].cuerpoIFrame.onload = function () {
+      seccionCF[0].crearEstInicial ();
+   
+   };
+   
    objTituloTmp = seccionCF[1].getTituloHtml();
    
    objTituloTmp.addEventListener("click", function() {
       seccionCF[1].transicion ();
    });
+   
+   seccionCF[1].cuerpoIFrame.onload = function () {
+      seccionCF[1].crearEstInicial ();
+   
+   };
    
    objTituloTmp = seccionCF[2].getTituloHtml();
    
@@ -51,6 +61,11 @@ function crearEscena () {
       seccionCF[2].transicion ();
    });
 
+
+   seccionCF[2].cuerpoIFrame.onload = function () {
+      seccionCF[2].crearEstInicial ();
+   
+   };
 }
 
 // Se ejecuta esta funcion cuando se termine de cargar la web

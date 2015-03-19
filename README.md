@@ -1,4 +1,4 @@
 # wyllman.github.io
 Página personal de Guillermo Rodríguez Pardo
 
-Enlace a la página [aquí](http://wyllman.github.io/index.html)
+Enlace a la página [aquí](https://wyllman.github.io/)
