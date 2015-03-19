@@ -48,11 +48,13 @@ CuerpoW.prototype.crearCTrans = function (conTran) {
          estilo.innerHTML = "#cuerpo.ctrans { transition: margin-top 2s;"
                            + "-webkit-transition: margin-top 2s;"
                            + " margin-top: " +  valor + "px; " 
-                           + " border-style: solid; border-width: 2px; }";
+                           //+ " border-style: solid; border-width: 2px; "
+                           + "}";
       
       } else {
          estilo.innerHTML = "#cuerpo.ctrans { margin-top: " +  valor + "px; " 
-                           + " border-style: solid; border-width: 2px; }";
+                           //+ " border-style: solid; border-width: 2px; "
+                           + "}";
       }
       this.cuerpo.appendChild(estilo);
    
