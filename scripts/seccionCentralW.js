@@ -22,7 +22,11 @@ function SeccionCentralW (IdNum, tituloI, urlI) {
       this.cuerpoVacio = false;
       this.cuerpoIFrame = document.createElement("IFRAME");
       this.cuerpoIFrame.id = this.idHTML + "_cuerpo";
-      this.cuerpoIFrame.setAttribute("src", urlI); 
+      this.cuerpoIFrame.setAttribute("src", urlI);
+      //this.cuerpoIFrame.onload = function () {
+         
+       
+      //}
       
       
    }
@@ -92,8 +96,8 @@ function SeccionCentralW (IdNum, tituloI, urlI) {
                             + "display:block;"
                             + "margin:auto;"
                             + "overflow:auto;"
-                            //+ "border-style: solid;"
-                            //+ "border-width: 2px;"
+                            + "border-style: solid;"
+                            + "border-width: 1px;"
                             //+ "box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);"
                             //+ "font-weight: bold;"
                             //+ "font-size: 130%;"
@@ -133,8 +137,8 @@ SeccionCentralW.prototype.crearHTrans = function() {
    estilo.type = 'text/css';
    estilo.innerHTML = "#" + this.idHTML + "_cuerpo.htrans { "
                             + " overflow:hidden;"
-                            + " transition: top 1.5s, height 1.5s, width 1.5s;"
-                            + " -webkit-transition: top 1.5s, height 1.5s, width 1.5s;"
+                            + " transition: top 3s, height 3s, width 3s;"
+                            + " -webkit-transition: top 3s, height 3s, width 3s;"
                             + " top: -35px;"
                             + " height: " + valorH + "px;"
                             + " width: 195px;"//+ " width: " + valorW + "px"
@@ -189,8 +193,8 @@ SeccionCentralW.prototype.crearSTrans = function() {
    estilo.type = 'text/css';
    estilo.innerHTML = "#" + this.idHTML + "_cuerpo.strans { "
                             //+ " overflow:hidden;"
-                            + " transition: top 1.5s, height 1.5s, width 1.5s;"
-                            + " -webkit-transition: top 1.5s, height 1.5s, width 1.5s;"
+                            + " transition: top 1s, height 1s, width 1s;"
+                            + " -webkit-transition: top 1s, height 1s, width 1s;"
                             //+ " top: -35px;"
                             //+ " height: " + valorH + "px;"
                             //+ " width: 195px;"//+ " width: " + valorW + "px"
@@ -212,8 +216,8 @@ SeccionCentralW.prototype.crearSTrans = function() {
    var estilo2 = document.createElement('style');
    estilo2.id = "estilo_" + this.idHTML + "S";
    estilo2.type = 'text/css';
-   estilo2.innerHTML = "#" + this.idHTML + ".strans { transition: height 1.5s, width 1.5s;"
-                            + "-webkit-transition: height 1.5s, width 1.5s;"
+   estilo2.innerHTML = "#" + this.idHTML + ".strans { transition: height 2s, width 2s;"
+                            + "-webkit-transition: height 2s, width 2s;"
                             //+ " top: -10px;"
                             //+ " height: " + (valorH - 5) + "px;"
                             //+ " width: 195px;"//+ " width: " + valorW + "px"
@@ -315,5 +319,41 @@ SeccionCentralW.prototype.getTituloHtml = function () {
    var objTitulo = document.getElementById(this.idHTML + "_titulo");
 
    return objTitulo;
+}
+
+// Funcion que retorna el objeto titulo
+SeccionCentralW.prototype.crearEstInicial = function () {
+   var elementoBuscado = document.getElementById("estilo_" + this.idHTML);
+   var padre;
+   
+   
+   if (elementoBuscado) {
+      padre = elementoBuscado.parentNode;
+      padre.removeChild(elementoBuscado);
+   }
+
+
+   this.estilo = document.createElement('style');
+   this.estilo.id = "estilo_" + this.idHTML;
+   this.estilo.type = 'text/css';
+   this.estilo.innerHTML = "#" + this.idHTML + " {"
+                            + "position:relative;"
+                            + "width: 95%;"
+                            + "width:-webkit-calc(100% - 30px);"
+                            + "width:-moz-calc(100% - 30px);"
+                            + "width: calc(100% - 30px);"
+                            + "height: " + this.cuerpoIFrame.contentWindow.document.body.scrollHeight + "px;"
+                            + "top: " + ((this.indexNum + 1) * 15) + "px;"
+                            + "margin-left: auto;"
+                            + "margin-right: auto;"
+                            + "z-index: 0;"
+                            + "border-style: solid;"
+                            + "border-width: 3px; "
+                            + "box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);"
+                            + "}";
+                            
+   this.seccionC.appendChild(this.estilo);
+
+
 }
 
